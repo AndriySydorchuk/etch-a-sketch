@@ -1,17 +1,20 @@
 const userInput = 16;
 const grid = document.querySelector(".grid");
 
-function createGrid() {
-  for (let i = 0; i < userInput * userInput; i++) {
+function createGrid(sizePerSide) {
+  for (let i = 0; i < sizePerSide * sizePerSide; i++) {
     const gridItem = document.createElement("div");
-    gridItem.classList.add("grid__item");
-    gridItem.style.width = grid.offsetWidth / userInput + "px";
-    gridItem.style.height = gridItem.style.width;
-    grid.appendChild(gridItem);
+    calcSquareSize(gridItem, sizePerSide);
+    grid.appendChild(gridItem).className = "grid__item";
   }
 }
 
-createGrid();
+function calcSquareSize(element, sizePerSide) {
+  element.style.width = grid.offsetWidth / sizePerSide + "px";
+  element.style.height = element.style.height;
+}
+
+createGrid(userInput);
 
 const gridItems = document.querySelectorAll(".grid__item");
 
