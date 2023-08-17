@@ -20,11 +20,18 @@ paint();
 const newBtn = document.querySelector(".btn__new");
 
 newBtn.addEventListener("click", () => {
-  userInput = prompt("Enter the number of squares per side:");
+  getUserInput();
   removeGrid();
   createGrid(userInput);
   paint();
 });
+
+function getUserInput() {
+  userInput = prompt("Enter the number of squares per side(max 30):");
+  while (userInput <= 0 || userInput > 30) {
+    userInput = prompt("Try again:");
+  }
+}
 
 function removeGrid() {
   const gridItems = document.querySelectorAll(".grid__item");
