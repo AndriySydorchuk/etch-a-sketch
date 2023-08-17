@@ -49,3 +49,12 @@ function paint() {
     });
   });
 }
+
+const clearBtn = document.querySelector(".btn__clear");
+
+clearBtn.addEventListener("click", () => {
+  const gridItems = document.querySelectorAll(".grid__item");
+  gridItems.forEach((item) => {
+    item.style.backgroundColor = "#fff";
+  });
+});
