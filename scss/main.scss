@@ -41,20 +41,17 @@ body {
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   overflow: hidden;
-
-  &__item {
-    outline: 1px solid #000;
-  }
+  background-color: #fff;
 }
 
 .btn {
-  background-color: $color-primary;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 1rem 2rem;
   font-size: 16px;
   transition: all 0.3s;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 
   &:hover {
     color: #fff;

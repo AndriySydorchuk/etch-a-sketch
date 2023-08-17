@@ -32,18 +32,17 @@ body {
   flex-wrap: wrap;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  overflow: hidden; }
-  .grid__item {
-    outline: 1px solid #000; }
+  overflow: hidden;
+  background-color: #fff; }
 
 .btn {
-  background-color: #eee;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 1rem 2rem;
   font-size: 16px;
   transition: all 0.3s;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6); }
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3); }
   .btn:hover {
     color: #fff;
     background-color: #000; }
