@@ -1,4 +1,4 @@
-const userInput = 16;
+let userInput = 16;
 const grid = document.querySelector(".grid");
 
 function createGrid(sizePerSide) {
@@ -15,11 +15,30 @@ function calcSquareSize(element, sizePerSide) {
 }
 
 createGrid(userInput);
+paint();
 
-const gridItems = document.querySelectorAll(".grid__item");
+const newBtn = document.querySelector(".btn__new");
 
-gridItems.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    item.style.backgroundColor = "#000";
-  });
+newBtn.addEventListener("click", () => {
+  userInput = prompt("Enter the number of squares per side:");
+  removeGrid();
+  createGrid(userInput);
+  paint();
 });
+
+function removeGrid() {
+  const gridItems = document.querySelectorAll(".grid__item");
+  gridItems.forEach((item) => {
+    item.remove();
+  });
+}
+
+function paint() {
+  const gridItems = document.querySelectorAll(".grid__item");
+
+  gridItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      item.style.backgroundColor = "#000";
+    });
+  });
+}
