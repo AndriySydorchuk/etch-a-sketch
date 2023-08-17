@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -38,9 +38,31 @@ body {
   height: 450px;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  overflow: hidden;
 
   &__item {
     outline: 1px solid #000;
+  }
+}
+
+.btn {
+  background-color: $color-primary;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+  &:active {
+    transform: translateY(6px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 }
