@@ -58,3 +58,15 @@ clearBtn.addEventListener("click", () => {
     item.style.backgroundColor = "#fff";
   });
 });
+
+const erasorBtn = document.querySelector(".btn__erasor");
+
+erasorBtn.addEventListener("click", () => {
+  erasorBtn.classList.add("btn__erasor--active");
+  const gridItems = document.querySelectorAll(".grid__item");
+  gridItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      item.style.backgroundColor = "#fff";
+    });
+  });
+});

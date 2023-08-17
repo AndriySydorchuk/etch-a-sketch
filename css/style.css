@@ -52,6 +52,9 @@ body {
   .btn:active {
     transform: translateY(6px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+  .btn__erasor--active {
+    color: #fff;
+    background-color: #000; }
   .btn-box {
     display: flex;
     justify-content: center;
