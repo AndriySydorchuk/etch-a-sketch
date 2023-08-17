@@ -13,3 +13,18 @@ body {
   min-height: 100vh;
   width: 100vw;
   font-family: "Anek Gurmukhi", sans-serif; }
+
+.main__inner {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.grid {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+  .grid__item {
+    outline: 1px solid #000; }
