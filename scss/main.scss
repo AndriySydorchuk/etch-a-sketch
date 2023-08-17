@@ -18,12 +18,18 @@ body {
   min-height: 100vh;
   width: 100vw;
   font-family: "Anek Gurmukhi", sans-serif;
+  background-color: #eee;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .main__inner {
   padding-top: 4rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -37,4 +43,7 @@ body {
   &__item {
     outline: 1px solid #000;
   }
+}
+
+.btn {
 }
