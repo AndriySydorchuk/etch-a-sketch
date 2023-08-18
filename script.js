@@ -62,7 +62,7 @@ clearBtn.addEventListener("click", () => {
 const erasorBtn = document.querySelector(".btn__erasor");
 
 erasorBtn.addEventListener("click", () => {
-  erasorBtn.classList.add("btn__erasor--active");
+  erasorBtn.classList.add("btn--active");
   const gridItems = document.querySelectorAll(".grid__item");
   gridItems.forEach((item) => {
     item.addEventListener("mouseover", () => {
