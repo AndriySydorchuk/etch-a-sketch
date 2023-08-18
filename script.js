@@ -50,6 +50,29 @@ function paint(color) {
   });
 }
 
+function paintRainbow() {
+  const gridItems = document.querySelectorAll(".grid__item");
+
+  gridItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      const color = getRandomColor();
+      item.style.backgroundColor = color;
+    });
+  });
+}
+
+function getRandomColor() {
+  const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+  let hexColor = "#";
+  for (let i = 0; i < 6; i++) {
+    const randomIndex = Math.floor(Math.random() * hex.length);
+    hexColor += hex[randomIndex];
+  }
+  return hexColor;
+}
+
+getRandomColor();
+
 const clearBtn = document.querySelector(".btn__clear");
 
 clearBtn.addEventListener("click", () => {
@@ -96,3 +119,10 @@ function resetBtns() {
     btn.classList.remove("btn--active");
   });
 }
+
+const rainbowBtn = document.querySelector(".btn__rainbow");
+
+rainbowBtn.addEventListener("click", () => {
+  makeActive(rainbowBtn);
+  paintRainbow();
+});
