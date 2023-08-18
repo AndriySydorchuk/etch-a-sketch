@@ -57,30 +57,42 @@ clearBtn.addEventListener("click", () => {
   gridItems.forEach((item) => {
     item.style.backgroundColor = "#fff";
   });
-  erasorBtn.classList.remove("btn--active");
-  colorBtn.classList.remove("btn--active");
+  resetBtns();
 });
 
 const erasorBtn = document.querySelector(".btn__erasor");
 
 erasorBtn.addEventListener("click", () => {
-  colorBtn.classList.remove("btn--active");
-  erasorBtn.classList.add("btn--active");
+  makeActive(erasorBtn);
+
   paint("#fff");
 });
 
 const colorBtn = document.querySelector(".btn__color");
 
 colorBtn.addEventListener("click", () => {
-  erasorBtn.classList.remove("btn--active");
-  colorBtn.classList.add("btn--active");
+  makeActive(colorBtn);
   let color = colorPicker.value;
   paint(color);
 
   colorPicker.addEventListener("input", () => {
-    erasorBtn.classList.remove("btn--active");
-    colorBtn.classList.add("btn--active");
+    makeActive(colorBtn);
     color = colorPicker.value;
     paint(color);
   });
 });
+
+function makeActive(pressedBtn) {
+  const btns = document.querySelectorAll(".btn");
+  btns.forEach((btn) => {
+    btn.classList.remove("btn--active");
+  });
+  pressedBtn.classList.add("btn--active");
+}
+
+function resetBtns() {
+  const btns = document.querySelectorAll(".btn");
+  btns.forEach((btn) => {
+    btn.classList.remove("btn--active");
+  });
+}
