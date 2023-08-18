@@ -71,14 +71,13 @@ function getRandomColor() {
   return hexColor;
 }
 
-getRandomColor();
-
 const clearBtn = document.querySelector(".btn__clear");
 
 clearBtn.addEventListener("click", () => {
   const gridItems = document.querySelectorAll(".grid__item");
   gridItems.forEach((item) => {
     item.style.backgroundColor = "#fff";
+    item.replaceWith(item.cloneNode(true));
   });
   resetBtns();
 });
@@ -87,7 +86,6 @@ const erasorBtn = document.querySelector(".btn__erasor");
 
 erasorBtn.addEventListener("click", () => {
   makeActive(erasorBtn);
-
   paint("#fff");
 });
 
