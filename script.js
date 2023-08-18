@@ -15,7 +15,6 @@ function calcSquareSize(element, sizePerSide) {
 }
 
 createGrid(userInput);
-paint();
 
 const newBtn = document.querySelector(".btn__new");
 
@@ -62,6 +61,7 @@ clearBtn.addEventListener("click", () => {
 const erasorBtn = document.querySelector(".btn__erasor");
 
 erasorBtn.addEventListener("click", () => {
+  colorBtn.classList.remove("btn--active");
   erasorBtn.classList.add("btn--active");
   const gridItems = document.querySelectorAll(".grid__item");
   gridItems.forEach((item) => {
@@ -69,4 +69,12 @@ erasorBtn.addEventListener("click", () => {
       item.style.backgroundColor = "#fff";
     });
   });
+});
+
+const colorBtn = document.querySelector(".btn__color");
+
+colorBtn.addEventListener("click", () => {
+  erasorBtn.classList.remove("btn--active");
+  colorBtn.classList.add("btn--active");
+  paint();
 });
