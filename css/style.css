@@ -60,3 +60,30 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column; }
+
+.color-picker {
+  text-align: center; }
+  .color-picker__input {
+    margin-bottom: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 90px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 100px; }
+    .color-picker__input::-webkit-color-swatch {
+      border-radius: 100px;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s; }
+      .color-picker__input::-webkit-color-swatch:hover {
+        transform: scale(1.05); }
+    .color-picker__input::-moz-color-swatch {
+      border-radius: 100px;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+      transform: scale(1.05); }

@@ -78,3 +78,36 @@ body {
     flex-direction: column;
   }
 }
+
+.color-picker {
+  text-align: center;
+  &__input {
+    margin-bottom: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 90px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 100px;
+
+    &::-webkit-color-swatch {
+      border-radius: 100px;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &::-moz-color-swatch {
+      border-radius: 100px;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+      transform: scale(1.05);
+    }
+  }
+}
