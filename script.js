@@ -1,6 +1,8 @@
 let userInput = 16;
 const grid = document.querySelector(".grid");
 
+const colorPicker = document.querySelector(".color-picker__input");
+
 function createGrid(sizePerSide) {
   for (let i = 0; i < sizePerSide * sizePerSide; i++) {
     const gridItem = document.createElement("div");
@@ -22,7 +24,6 @@ newBtn.addEventListener("click", () => {
   getUserInput();
   removeGrid();
   createGrid(userInput);
-  paint();
 });
 
 function getUserInput() {
@@ -39,12 +40,12 @@ function removeGrid() {
   });
 }
 
-function paint() {
+function paint(color) {
   const gridItems = document.querySelectorAll(".grid__item");
 
   gridItems.forEach((item) => {
     item.addEventListener("mouseover", () => {
-      item.style.backgroundColor = "#000";
+      item.style.backgroundColor = color;
     });
   });
 }
@@ -56,6 +57,8 @@ clearBtn.addEventListener("click", () => {
   gridItems.forEach((item) => {
     item.style.backgroundColor = "#fff";
   });
+  erasorBtn.classList.remove("btn--active");
+  colorBtn.classList.remove("btn--active");
 });
 
 const erasorBtn = document.querySelector(".btn__erasor");
@@ -63,12 +66,7 @@ const erasorBtn = document.querySelector(".btn__erasor");
 erasorBtn.addEventListener("click", () => {
   colorBtn.classList.remove("btn--active");
   erasorBtn.classList.add("btn--active");
-  const gridItems = document.querySelectorAll(".grid__item");
-  gridItems.forEach((item) => {
-    item.addEventListener("mouseover", () => {
-      item.style.backgroundColor = "#fff";
-    });
-  });
+  paint("#fff");
 });
 
 const colorBtn = document.querySelector(".btn__color");
@@ -76,5 +74,13 @@ const colorBtn = document.querySelector(".btn__color");
 colorBtn.addEventListener("click", () => {
   erasorBtn.classList.remove("btn--active");
   colorBtn.classList.add("btn--active");
-  paint();
+  let color = colorPicker.value;
+  paint(color);
+
+  colorPicker.addEventListener("input", () => {
+    erasorBtn.classList.remove("btn--active");
+    colorBtn.classList.add("btn--active");
+    color = colorPicker.value;
+    paint(color);
+  });
 });
